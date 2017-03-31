@@ -51,14 +51,12 @@ const readAllCats = (req, res, callback) => {
   // two parameters is JSON of search criteria and callback.
   // That limits your search to only things that match the criteria
   // The find function returns an array of matching objects
-  console.log('callback: ');
-  console.dir(callback);
+
 
   Cat.find(callback);
 };
 const readAllDogs = (req, res, callback) => {
-  console.log('callback: ');
-  console.dir(callback);
+
 
   Dog.find(callback);
 };
@@ -361,19 +359,19 @@ const updateLast = (req, res) => {
   savePromise.catch(err => res.json({ err }));
 };
 
-const updateLastDog = (req, res) => {
-  lastAddedDog.age++;
-
-  const savePromise = lastAddedDog.save();
-
-  savePromise.then(() => res.json({
-    name: lastAddedDog.name,
-    breed: lastAddedDog.breed,
-    age: lastAddedDog.age,
-  }));
-
-  savePromise.catch(err => res.json({ err }));
-};
+//const updateLastDog = (req, res) => {
+//  lastAddedDog.age++;
+//
+//  const savePromise = lastAddedDog.save();
+//
+//  savePromise.then(() => res.json({
+//    name: lastAddedDog.name,
+//    breed: lastAddedDog.breed,
+//    age: lastAddedDog.age,
+//  }));
+//
+//  savePromise.catch(err => res.json({ err }));
+//};
 
 // function to handle a request to any non-real resources (404)
 // controller functions in Express receive the full HTTP request
@@ -404,7 +402,7 @@ module.exports = {
   setName,
   setNameDog,
   updateLast,
-  updateLastDog,
+//  updateLastDog,
   searchName,
   searchNameDog,
   notFound,
